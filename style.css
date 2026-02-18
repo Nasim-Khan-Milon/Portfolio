@@ -294,3 +294,138 @@ body::before{
 .nav-links a.active{
   color:#00f2ff;
 }
+
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 45px;
+  margin-top: 70px;
+}
+
+/* CARD BASE */
+.project-card-new {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  transition: 0.5s ease;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeUp 1s forwards;
+}
+
+/* Stagger animation */
+.project-card-new:nth-child(1) { animation-delay: 0.2s; }
+.project-card-new:nth-child(2) { animation-delay: 0.4s; }
+.project-card-new:nth-child(3) { animation-delay: 0.6s; }
+.project-card-new:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animated Glow Border */
+.project-card-new::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(45deg,  #095b13, #00f2ff);
+  background-size: 300%;
+  z-index: -1;
+  animation: borderGlow 8s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+/* IMAGE */
+.project-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-img img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
+
+/* Dark overlay */
+.project-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* CONTENT */
+.project-content {
+  padding: 25px;
+  transition: 0.4s ease;
+}
+
+.project-content h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.project-content p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* TECH STACK */
+.tech-stack {
+  font-size: 13px;
+  margin-bottom: 20px;
+  color: #00f2ff;
+  letter-spacing: 1px;
+}
+
+/* BUTTONS */
+.project-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.project-buttons a {
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  text-decoration: none;
+  background: #00f2ff;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.project-buttons a:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px #00f2ff;
+}
+
+/* HOVER EFFECT */
+.project-card-new:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0, 242, 255, 0.4);
+}
+
+.project-card-new:hover img {
+  transform: scale(1.1);
+}
+
+/* Light mode support */
+body.light .project-card-new {
+  background: rgba(0,0,0,0.05);
+}
