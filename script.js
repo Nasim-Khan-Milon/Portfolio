@@ -25,11 +25,6 @@ var typed = new Typed(".typing", {
   loop: true
 });
 
-// Dark Mode Toggle
-function toggleMode(){
-  document.body.classList.toggle("light");
-}
-
 // Particle Background
 particlesJS("particles-js", {
   particles: {
