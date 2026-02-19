@@ -473,7 +473,7 @@ body.light .project-card-new {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* hide offscreen */
+    right: -100%; 
     height: 100vh;
     width: 250px;
     background: rgba(0, 0, 0, 0.95);
@@ -486,11 +486,11 @@ body.light .project-card-new {
   }
 
   .nav-links.active {
-    right: 0; /* slide in */
+    right: 0; 
   }
 
   .hamburger {
-    display: flex; /* show hamburger */
+    display: flex; 
   }
 
   .nav-links li a {

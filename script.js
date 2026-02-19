@@ -25,15 +25,7 @@ var typed = new Typed(".typing", {
   loop: true
 });
 
-// Particle Background
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 80 },
-    size: { value: 3 },
-    move: { speed: 2 },
-    line_linked: { enable: true },
-  }
-});
+
 
 
 
@@ -88,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.getElementById("nav-links");
 
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active"); // animate hamburger
-    navLinks.classList.toggle("active");  // slide menu
+    hamburger.classList.toggle("active"); 
+    navLinks.classList.toggle("active");  
   });
 
   // Close menu when a link is clicked
@@ -107,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* ================= EMAIL FUNCTIONALITY ================= */
+/* Email Functionality */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -130,8 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
       form
     ).then(function () {
 
-      alert("Message sent successfully!");
-
       status.innerText = "✅ Message sent successfully!";
       status.style.color = "#00f2ff";
 
@@ -140,8 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
 
     }, function (error) {
-
-      alert("Failed to send message. Please try again.");
 
       status.innerText = "❌ Failed to send message.";
       status.style.color = "red";
