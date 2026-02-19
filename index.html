@@ -11,7 +11,7 @@
 <body>
 
   <!-- PARTICLE BACKGROUND -->
-  <!-- <div id="particles-js"></div> -->
+  <div id="particles-js"></div>
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -93,7 +93,8 @@
           </p>
           <div class="tech-stack">React • Node • Express • MongoDB</div>
           <div class="project-buttons">
-            <a href="https://github.com/Nasim-Khan-Milon/MediApp" target="_blank" rel="noopener noreferrer">View Code</a>
+            <a href="https://github.com/Nasim-Khan-Milon/MediApp" target="_blank" rel="noopener noreferrer">View
+              Code</a>
           </div>
         </div>
       </div>
@@ -111,8 +112,8 @@
           </p>
           <div class="tech-stack">React • Node • Express • MySQL</div>
           <div class="project-buttons">
-            <a href="https://github.com/Nasim-Khan-Milon/Shoping-System" target="_blank"
-              rel="noopener noreferrer">View Code</a>
+            <a href="https://github.com/Nasim-Khan-Milon/Shoping-System" target="_blank" rel="noopener noreferrer">View
+              Code</a>
           </div>
         </div>
       </div>
@@ -130,7 +131,8 @@
           </p>
           <div class="tech-stack">Java • Socket Programming</div>
           <div class="project-buttons">
-            <a href="https://github.com/Nasim-Khan-Milon/Chat-App" target="_blank" rel="noopener noreferrer">View Code</a>
+            <a href="https://github.com/Nasim-Khan-Milon/Chat-App" target="_blank" rel="noopener noreferrer">View
+              Code</a>
           </div>
         </div>
       </div>
@@ -148,8 +150,8 @@
           </p>
           <div class="tech-stack">C++ • SDL2</div>
           <div class="project-buttons">
-            <a href="https://github.com/Nasim-Khan-Milon/SDL-Project" target="_blank"
-              rel="noopener noreferrer">View Code</a>
+            <a href="https://github.com/Nasim-Khan-Milon/SDL-Project" target="_blank" rel="noopener noreferrer">View
+              Code</a>
           </div>
         </div>
       </div>
@@ -203,12 +205,15 @@
       </p>
     </div>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
+    <form class="contact-form" id="contact-form">
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="from_email" placeholder="Email" required>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit" class="btn" id="send-btn">Send Message</button>
     </form>
+
+    <p id="form-status" style="margin-top:15px;"></p>
+
   </section>
 
   <footer>
@@ -217,6 +222,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 
 </body>

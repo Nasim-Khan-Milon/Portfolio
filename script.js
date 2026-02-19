@@ -81,3 +81,53 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+
+/* ================= EMAIL FUNCTIONALITY ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  emailjs.init("GA3xh4uy8kJQt7DSw");
+
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const btn = document.getElementById("send-btn");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    btn.innerText = "Sending...";
+    btn.disabled = true;
+    status.innerText = "";
+
+    emailjs.sendForm(
+      "service_2rp3p2i",
+      "template_wjx11d9",
+      form
+    ).then(function () {
+
+      alert("Message sent successfully!");
+
+      status.innerText = "✅ Message sent successfully!";
+      status.style.color = "#00f2ff";
+
+      btn.innerText = "Send Message";
+      btn.disabled = false;
+      form.reset();
+
+    }, function (error) {
+
+      alert("Failed to send message. Please try again.");
+
+      status.innerText = "❌ Failed to send message.";
+      status.style.color = "red";
+
+      btn.innerText = "Send Message";
+      btn.disabled = false;
+
+      console.log("EmailJS Error:", error);
+    });
+  });
+
+});
